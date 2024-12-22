@@ -17,7 +17,7 @@ steps:
       command: 'restore'
       projects: '***/*.csproj'
       feedsToUse: 'select'
-    displayName: 'release nuget packages'
+    displayName: 'Release Nuget Packages'
   - task: DotNetCoreCLI@2
     inputs:
       command: 'build'
@@ -29,7 +29,7 @@ steps:
       command: 'test'
       projects: '***/*Test.csproj'
       arguments: '--no-restore'
-    displayName: 'unit testing'
+    displayName: 'Unit Testing'
   
   - task: DotNetCoreCLI@2
     inputs:
@@ -37,4 +37,4 @@ steps:
       publishWebProjects: false
       projects: '**/CustomerApi.csproj'
       arguments: '--configuration $(buildConfiguration) --no-restore'
-    displayName: publish-package
+    displayName: 'Publish-Package'
