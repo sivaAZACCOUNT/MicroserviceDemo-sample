@@ -11,6 +11,10 @@ variables:
 
 pool:
   vmImage: 'ubuntu-latest'
+  demands:
+  - dotnet core - equals 3.1
+  - git
+  - Agent.Version -equals 2.0
 steps:
   - task: DotNetCoreCLI@2
     inputs:
